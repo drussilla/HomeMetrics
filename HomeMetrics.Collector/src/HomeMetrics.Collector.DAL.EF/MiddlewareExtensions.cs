@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using HomeMetrics.Collector.DAL.EF.Repositories;
+using HomeMetrics.Collector.DAL.Repositories;
+using Microsoft.AspNet.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace HomeMetrics.Collector.DAL.EF
@@ -14,6 +16,8 @@ namespace HomeMetrics.Collector.DAL.EF
         {
             services.AddEntityFramework();
             services.AddScoped<IDbContextProvider, LazyDbContextProvider>();
+            services.AddScoped<ISensorRepository, SensorRepository>();
+            services.AddScoped<IReadingRepository, ReadingRepository>();
             return services;
         }
     }
