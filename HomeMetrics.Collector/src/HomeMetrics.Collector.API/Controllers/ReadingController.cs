@@ -5,9 +5,9 @@ using Microsoft.Extensions.Logging;
 namespace HomeMetrics.Collector.API.Controllers
 {
     [Route("api/reading")]
-    public class ReadingController : ApiController
+    public class ReadingController : APIController
     {
-        private ILogger<ReadingController> _log;
+        private readonly ILogger<ReadingController> _log;
 
         public ReadingController(ILogger<ReadingController> log)
         {
@@ -18,7 +18,7 @@ namespace HomeMetrics.Collector.API.Controllers
         public void Add([FromBody]dynamic reading)
         {
             var data = (string) reading.Data;
-            _log.LogVerbose(data);
+            _log.LogInformation(data);
         }
     }
 }

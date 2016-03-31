@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.AspNet.Mvc;
 
 namespace HomeMetrics.Collector.API.Controllers
 {
-    public class ApiController : Controller
+    public class APIController : Controller
     {
         protected IActionResult Created(string location)
         {
