@@ -8,10 +8,10 @@ namespace HomeMetrics.Collector.API.Controllers
     [Route("api/sensor")]
     public class SensorController : APIController
     {
-        private readonly ILogger<ReadingController> _log;
+        private readonly ILogger<SensorController> _log;
         private readonly ISensorRepository _sensors;
 
-        public SensorController(ILogger<ReadingController> log, ISensorRepository sensors)
+        public SensorController(ILogger<SensorController> log, ISensorRepository sensors)
         {
             _log = log;
             _sensors = sensors;
